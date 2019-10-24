@@ -1,0 +1,1012 @@
+Using TensorFlow backend.
+WARNING: Logging before flag parsing goes to stderr.
+W1010 04:09:38.448497  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\backend\tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W1010 04:09:38.483405  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\backend\tensorflow_backend.py:4185: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W1010 04:09:38.506369  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\backend\tensorflow_backend.py:245: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+W1010 04:09:38.507343  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\backend\tensorflow_backend.py:174: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+W1010 04:09:38.507343  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\backend\tensorflow_backend.py:181: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2019-10-10 04:09:38.508521: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+2019-10-10 04:09:38.516419: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library nvcuda.dll
+2019-10-10 04:09:38.591483: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties:
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.7335
+pciBusID: 0000:01:00.0
+2019-10-10 04:09:38.597573: I tensorflow/stream_executor/platform/default/dlopen_checker_stub.cc:25] GPU libraries are statically linked, skip dlopen check.
+2019-10-10 04:09:38.603206: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-10-10 04:09:39.104405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-10-10 04:09:39.108535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0
+2019-10-10 04:09:39.110631: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N
+2019-10-10 04:09:39.114875: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6351 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0, compute capability: 6.1)
+W1010 04:09:39.396509  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\backend\tensorflow_backend.py:1834: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+W1010 04:09:42.786374  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\backend\tensorflow_backend.py:2018: The name tf.image.resize_nearest_neighbor is deprecated. Please use tf.compat.v1.image.resize_nearest_neighbor instead.
+
+W1010 04:09:48.840315  1480 deprecation_wrapper.py:119] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\keras\optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+W1010 04:09:49.137142  1480 deprecation.py:323] From C:\Users\stnu2\Anaconda3\envs\kuzushiji\lib\site-packages\tensorflow\python\ops\math_grad.py:1205: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+pseudo labeling
+ recog image 4150/4150
+pseudo label num = 468780 / 929720
+ read image 3881/3104
+ read image 3876/777
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to
+==================================================================================================
+input_1 (InputLayer)            (None, 96, 96, 1)    0
+__________________________________________________________________________________________________
+conv2d_1 (Conv2D)               (None, 48, 48, 48)   480         input_1[0][0]
+__________________________________________________________________________________________________
+batch_normalization_1 (BatchNor (None, 48, 48, 48)   192         conv2d_1[0][0]
+__________________________________________________________________________________________________
+activation_1 (Activation)       (None, 48, 48, 48)   0           batch_normalization_1[0][0]
+__________________________________________________________________________________________________
+conv2d_2 (Conv2D)               (None, 24, 24, 96)   41568       activation_1[0][0]
+__________________________________________________________________________________________________
+batch_normalization_2 (BatchNor (None, 24, 24, 96)   384         conv2d_2[0][0]
+__________________________________________________________________________________________________
+activation_2 (Activation)       (None, 24, 24, 96)   0           batch_normalization_2[0][0]
+__________________________________________________________________________________________________
+conv2d_3 (Conv2D)               (None, 24, 24, 96)   83040       activation_2[0][0]
+__________________________________________________________________________________________________
+batch_normalization_3 (BatchNor (None, 24, 24, 96)   384         conv2d_3[0][0]
+__________________________________________________________________________________________________
+activation_3 (Activation)       (None, 24, 24, 96)   0           batch_normalization_3[0][0]
+__________________________________________________________________________________________________
+conv2d_4 (Conv2D)               (None, 24, 24, 96)   83040       activation_3[0][0]
+__________________________________________________________________________________________________
+batch_normalization_4 (BatchNor (None, 24, 24, 96)   384         conv2d_4[0][0]
+__________________________________________________________________________________________________
+activation_4 (Activation)       (None, 24, 24, 96)   0           batch_normalization_4[0][0]
+__________________________________________________________________________________________________
+conv2d_5 (Conv2D)               (None, 24, 24, 96)   83040       activation_4[0][0]
+__________________________________________________________________________________________________
+batch_normalization_5 (BatchNor (None, 24, 24, 96)   384         conv2d_5[0][0]
+__________________________________________________________________________________________________
+activation_5 (Activation)       (None, 24, 24, 96)   0           batch_normalization_5[0][0]
+__________________________________________________________________________________________________
+conv2d_6 (Conv2D)               (None, 24, 24, 96)   83040       activation_5[0][0]
+__________________________________________________________________________________________________
+batch_normalization_6 (BatchNor (None, 24, 24, 96)   384         conv2d_6[0][0]
+__________________________________________________________________________________________________
+activation_6 (Activation)       (None, 24, 24, 96)   0           batch_normalization_6[0][0]
+__________________________________________________________________________________________________
+conv2d_7 (Conv2D)               (None, 24, 24, 96)   83040       activation_6[0][0]
+__________________________________________________________________________________________________
+conv2d_8 (Conv2D)               (None, 24, 24, 96)   4704        activation_1[0][0]
+__________________________________________________________________________________________________
+batch_normalization_7 (BatchNor (None, 24, 24, 96)   384         conv2d_7[0][0]
+__________________________________________________________________________________________________
+add_1 (Add)                     (None, 24, 24, 96)   0           conv2d_8[0][0]
+                                                                 batch_normalization_7[0][0]
+__________________________________________________________________________________________________
+conv2d_9 (Conv2D)               (None, 12, 12, 192)  166080      add_1[0][0]
+__________________________________________________________________________________________________
+batch_normalization_8 (BatchNor (None, 12, 12, 192)  768         conv2d_9[0][0]
+__________________________________________________________________________________________________
+activation_7 (Activation)       (None, 12, 12, 192)  0           batch_normalization_8[0][0]
+__________________________________________________________________________________________________
+conv2d_10 (Conv2D)              (None, 12, 12, 192)  331968      activation_7[0][0]
+__________________________________________________________________________________________________
+batch_normalization_9 (BatchNor (None, 12, 12, 192)  768         conv2d_10[0][0]
+__________________________________________________________________________________________________
+activation_8 (Activation)       (None, 12, 12, 192)  0           batch_normalization_9[0][0]
+__________________________________________________________________________________________________
+conv2d_11 (Conv2D)              (None, 12, 12, 192)  331968      activation_8[0][0]
+__________________________________________________________________________________________________
+batch_normalization_10 (BatchNo (None, 12, 12, 192)  768         conv2d_11[0][0]
+__________________________________________________________________________________________________
+activation_9 (Activation)       (None, 12, 12, 192)  0           batch_normalization_10[0][0]
+__________________________________________________________________________________________________
+conv2d_12 (Conv2D)              (None, 12, 12, 192)  331968      activation_9[0][0]
+__________________________________________________________________________________________________
+batch_normalization_11 (BatchNo (None, 12, 12, 192)  768         conv2d_12[0][0]
+__________________________________________________________________________________________________
+activation_10 (Activation)      (None, 12, 12, 192)  0           batch_normalization_11[0][0]
+__________________________________________________________________________________________________
+conv2d_13 (Conv2D)              (None, 12, 12, 192)  331968      activation_10[0][0]
+__________________________________________________________________________________________________
+batch_normalization_12 (BatchNo (None, 12, 12, 192)  768         conv2d_13[0][0]
+__________________________________________________________________________________________________
+activation_11 (Activation)      (None, 12, 12, 192)  0           batch_normalization_12[0][0]
+__________________________________________________________________________________________________
+conv2d_14 (Conv2D)              (None, 12, 12, 192)  331968      activation_11[0][0]
+__________________________________________________________________________________________________
+batch_normalization_13 (BatchNo (None, 12, 12, 192)  768         conv2d_14[0][0]
+__________________________________________________________________________________________________
+activation_12 (Activation)      (None, 12, 12, 192)  0           batch_normalization_13[0][0]
+__________________________________________________________________________________________________
+conv2d_15 (Conv2D)              (None, 12, 12, 192)  331968      activation_12[0][0]
+__________________________________________________________________________________________________
+batch_normalization_14 (BatchNo (None, 12, 12, 192)  768         conv2d_15[0][0]
+__________________________________________________________________________________________________
+activation_13 (Activation)      (None, 12, 12, 192)  0           batch_normalization_14[0][0]
+__________________________________________________________________________________________________
+conv2d_16 (Conv2D)              (None, 12, 12, 192)  331968      activation_13[0][0]
+__________________________________________________________________________________________________
+conv2d_17 (Conv2D)              (None, 12, 12, 192)  18624       add_1[0][0]
+__________________________________________________________________________________________________
+batch_normalization_15 (BatchNo (None, 12, 12, 192)  768         conv2d_16[0][0]
+__________________________________________________________________________________________________
+add_2 (Add)                     (None, 12, 12, 192)  0           conv2d_17[0][0]
+                                                                 batch_normalization_15[0][0]
+__________________________________________________________________________________________________
+conv2d_18 (Conv2D)              (None, 6, 6, 384)    663936      add_2[0][0]
+__________________________________________________________________________________________________
+batch_normalization_16 (BatchNo (None, 6, 6, 384)    1536        conv2d_18[0][0]
+__________________________________________________________________________________________________
+activation_14 (Activation)      (None, 6, 6, 384)    0           batch_normalization_16[0][0]
+__________________________________________________________________________________________________
+conv2d_19 (Conv2D)              (None, 6, 6, 384)    1327488     activation_14[0][0]
+__________________________________________________________________________________________________
+batch_normalization_17 (BatchNo (None, 6, 6, 384)    1536        conv2d_19[0][0]
+__________________________________________________________________________________________________
+activation_15 (Activation)      (None, 6, 6, 384)    0           batch_normalization_17[0][0]
+__________________________________________________________________________________________________
+conv2d_20 (Conv2D)              (None, 6, 6, 384)    1327488     activation_15[0][0]
+__________________________________________________________________________________________________
+batch_normalization_18 (BatchNo (None, 6, 6, 384)    1536        conv2d_20[0][0]
+__________________________________________________________________________________________________
+activation_16 (Activation)      (None, 6, 6, 384)    0           batch_normalization_18[0][0]
+__________________________________________________________________________________________________
+conv2d_21 (Conv2D)              (None, 6, 6, 384)    1327488     activation_16[0][0]
+__________________________________________________________________________________________________
+batch_normalization_19 (BatchNo (None, 6, 6, 384)    1536        conv2d_21[0][0]
+__________________________________________________________________________________________________
+activation_17 (Activation)      (None, 6, 6, 384)    0           batch_normalization_19[0][0]
+__________________________________________________________________________________________________
+conv2d_22 (Conv2D)              (None, 6, 6, 384)    1327488     activation_17[0][0]
+__________________________________________________________________________________________________
+batch_normalization_20 (BatchNo (None, 6, 6, 384)    1536        conv2d_22[0][0]
+__________________________________________________________________________________________________
+activation_18 (Activation)      (None, 6, 6, 384)    0           batch_normalization_20[0][0]
+__________________________________________________________________________________________________
+conv2d_23 (Conv2D)              (None, 6, 6, 384)    1327488     activation_18[0][0]
+__________________________________________________________________________________________________
+conv2d_24 (Conv2D)              (None, 6, 6, 384)    74112       add_2[0][0]
+__________________________________________________________________________________________________
+batch_normalization_21 (BatchNo (None, 6, 6, 384)    1536        conv2d_23[0][0]
+__________________________________________________________________________________________________
+add_3 (Add)                     (None, 6, 6, 384)    0           conv2d_24[0][0]
+                                                                 batch_normalization_21[0][0]
+__________________________________________________________________________________________________
+batch_normalization_22 (BatchNo (None, 6, 6, 384)    1536        add_3[0][0]
+__________________________________________________________________________________________________
+activation_19 (Activation)      (None, 6, 6, 384)    0           batch_normalization_22[0][0]
+__________________________________________________________________________________________________
+input_2 (InputLayer)            (None, 1)            0
+__________________________________________________________________________________________________
+global_average_pooling2d_1 (Glo (None, 384)          0           activation_19[0][0]
+__________________________________________________________________________________________________
+batch_normalization_23 (BatchNo (None, 1)            4           input_2[0][0]
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 385)          0           global_average_pooling2d_1[0][0]
+                                                                 batch_normalization_23[0][0]
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 4212)         1625832     concatenate_1[0][0]
+==================================================================================================
+Total params: 11,991,148
+Trainable params: 11,981,450
+Non-trainable params: 9,698
+__________________________________________________________________________________________________
+Epoch 1/200
+3971/3970 [==============================] - 1301s 328ms/step - loss: 1.3707 - acc: 0.8286 - val_loss: 1.0827 - val_acc: 0.8414
+
+Epoch 00001: val_acc improved from -inf to 0.84140, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 2/200
+3971/3970 [==============================] - 1318s 332ms/step - loss: 0.7010 - acc: 0.9084 - val_loss: 0.9237 - val_acc: 0.8524
+
+Epoch 00002: val_acc improved from 0.84140 to 0.85237, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 3/200
+3971/3970 [==============================] - 1319s 332ms/step - loss: 0.5538 - acc: 0.9254 - val_loss: 0.6664 - val_acc: 0.9022
+
+Epoch 00003: val_acc improved from 0.85237 to 0.90217, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 4/200
+3971/3970 [==============================] - 1301s 328ms/step - loss: 0.4828 - acc: 0.9335 - val_loss: 0.5972 - val_acc: 0.9115
+
+Epoch 00004: val_acc improved from 0.90217 to 0.91148, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 5/200
+3971/3970 [==============================] - 1272s 320ms/step - loss: 0.4404 - acc: 0.9386 - val_loss: 0.5723 - val_acc: 0.9132
+
+Epoch 00005: val_acc improved from 0.91148 to 0.91316, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 6/200
+3971/3970 [==============================] - 1302s 328ms/step - loss: 0.4142 - acc: 0.9418 - val_loss: 0.5264 - val_acc: 0.9224
+
+Epoch 00006: val_acc improved from 0.91316 to 0.92245, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 7/200
+3971/3970 [==============================] - 1290s 325ms/step - loss: 0.3942 - acc: 0.9443 - val_loss: 0.5635 - val_acc: 0.9103
+
+Epoch 00007: val_acc did not improve from 0.92245
+Epoch 8/200
+3971/3970 [==============================] - 1286s 324ms/step - loss: 0.3777 - acc: 0.9466 - val_loss: 0.4891 - val_acc: 0.9288
+
+Epoch 00008: val_acc improved from 0.92245 to 0.92884, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 9/200
+3971/3970 [==============================] - 1294s 326ms/step - loss: 0.3649 - acc: 0.9481 - val_loss: 0.5006 - val_acc: 0.9248
+
+Epoch 00009: val_acc did not improve from 0.92884
+Epoch 10/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.3538 - acc: 0.9495 - val_loss: 0.5628 - val_acc: 0.9073
+
+Epoch 00010: val_acc did not improve from 0.92884
+Epoch 11/200
+3971/3970 [==============================] - 1263s 318ms/step - loss: 0.3439 - acc: 0.9507 - val_loss: 0.4673 - val_acc: 0.9298
+
+Epoch 00011: val_acc improved from 0.92884 to 0.92981, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 12/200
+3971/3970 [==============================] - 1320s 332ms/step - loss: 0.3376 - acc: 0.9513 - val_loss: 0.4650 - val_acc: 0.9314
+
+Epoch 00012: val_acc improved from 0.92981 to 0.93140, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 13/200
+3971/3970 [==============================] - 1290s 325ms/step - loss: 0.3301 - acc: 0.9526 - val_loss: 0.4703 - val_acc: 0.9275
+
+Epoch 00013: val_acc did not improve from 0.93140
+Epoch 14/200
+3971/3970 [==============================] - 1324s 333ms/step - loss: 0.3241 - acc: 0.9531 - val_loss: 0.4903 - val_acc: 0.9225
+
+Epoch 00014: val_acc did not improve from 0.93140
+Epoch 15/200
+3971/3970 [==============================] - 1287s 324ms/step - loss: 0.3187 - acc: 0.9536 - val_loss: 0.4476 - val_acc: 0.9329
+
+Epoch 00015: val_acc improved from 0.93140 to 0.93292, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 16/200
+3971/3970 [==============================] - 1329s 335ms/step - loss: 0.3128 - acc: 0.9543 - val_loss: 0.4582 - val_acc: 0.9301
+
+Epoch 00016: val_acc did not improve from 0.93292
+Epoch 17/200
+3971/3970 [==============================] - 1308s 329ms/step - loss: 0.3079 - acc: 0.9548 - val_loss: 0.4263 - val_acc: 0.9366
+
+Epoch 00017: val_acc improved from 0.93292 to 0.93663, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 18/200
+3971/3970 [==============================] - 1271s 320ms/step - loss: 0.3034 - acc: 0.9555 - val_loss: 0.4320 - val_acc: 0.9339
+
+Epoch 00018: val_acc did not improve from 0.93663
+Epoch 19/200
+3971/3970 [==============================] - 1325s 334ms/step - loss: 0.3003 - acc: 0.9558 - val_loss: 0.4196 - val_acc: 0.9359
+
+Epoch 00019: val_acc did not improve from 0.93663
+Epoch 20/200
+3971/3970 [==============================] - 1317s 332ms/step - loss: 0.2961 - acc: 0.9565 - val_loss: 0.4360 - val_acc: 0.9323
+
+Epoch 00020: val_acc did not improve from 0.93663
+Epoch 21/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.2920 - acc: 0.9569 - val_loss: 0.4188 - val_acc: 0.9379
+
+Epoch 00021: val_acc improved from 0.93663 to 0.93793, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 22/200
+3971/3970 [==============================] - 1295s 326ms/step - loss: 0.2886 - acc: 0.9576 - val_loss: 0.4267 - val_acc: 0.9349
+
+Epoch 00022: val_acc did not improve from 0.93793
+Epoch 23/200
+3971/3970 [==============================] - 1319s 332ms/step - loss: 0.2867 - acc: 0.9576 - val_loss: 0.4144 - val_acc: 0.9376
+
+Epoch 00023: val_acc did not improve from 0.93793
+Epoch 24/200
+3971/3970 [==============================] - 1294s 326ms/step - loss: 0.2825 - acc: 0.9581 - val_loss: 0.4341 - val_acc: 0.9324
+
+Epoch 00024: val_acc did not improve from 0.93793
+Epoch 25/200
+3971/3970 [==============================] - 1286s 324ms/step - loss: 0.2800 - acc: 0.9586 - val_loss: 0.4213 - val_acc: 0.9366
+
+Epoch 00025: val_acc did not improve from 0.93793
+Epoch 26/200
+3971/3970 [==============================] - 1284s 323ms/step - loss: 0.2789 - acc: 0.9584 - val_loss: 0.4255 - val_acc: 0.9327
+
+Epoch 00026: val_acc did not improve from 0.93793
+Epoch 27/200
+3971/3970 [==============================] - 1268s 319ms/step - loss: 0.2755 - acc: 0.9590 - val_loss: 0.3994 - val_acc: 0.9396
+
+Epoch 00027: val_acc improved from 0.93793 to 0.93962, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 28/200
+3971/3970 [==============================] - 1287s 324ms/step - loss: 0.2731 - acc: 0.9592 - val_loss: 0.4195 - val_acc: 0.9356
+
+Epoch 00028: val_acc did not improve from 0.93962
+Epoch 29/200
+3971/3970 [==============================] - 1270s 320ms/step - loss: 0.2706 - acc: 0.9596 - val_loss: 0.3938 - val_acc: 0.9394
+
+Epoch 00029: val_acc did not improve from 0.93962
+Epoch 30/200
+3971/3970 [==============================] - 1280s 322ms/step - loss: 0.2689 - acc: 0.9598 - val_loss: 0.4239 - val_acc: 0.9329
+
+Epoch 00030: val_acc did not improve from 0.93962
+Epoch 31/200
+3971/3970 [==============================] - 1288s 324ms/step - loss: 0.2677 - acc: 0.9600 - val_loss: 0.4208 - val_acc: 0.9343
+
+Epoch 00031: val_acc did not improve from 0.93962
+Epoch 32/200
+3971/3970 [==============================] - 1285s 324ms/step - loss: 0.2652 - acc: 0.9601 - val_loss: 0.3964 - val_acc: 0.9392
+
+Epoch 00032: val_acc did not improve from 0.93962
+Epoch 33/200
+3971/3970 [==============================] - 1295s 326ms/step - loss: 0.2637 - acc: 0.9603 - val_loss: 0.4004 - val_acc: 0.9377
+
+Epoch 00033: val_acc did not improve from 0.93962
+Epoch 34/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.2618 - acc: 0.9606 - val_loss: 0.3871 - val_acc: 0.9404
+
+Epoch 00034: val_acc improved from 0.93962 to 0.94045, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 35/200
+3971/3970 [==============================] - 1290s 325ms/step - loss: 0.2603 - acc: 0.9609 - val_loss: 0.4120 - val_acc: 0.9342
+
+Epoch 00035: val_acc did not improve from 0.94045
+Epoch 36/200
+3971/3970 [==============================] - 1283s 323ms/step - loss: 0.2590 - acc: 0.9610 - val_loss: 0.3906 - val_acc: 0.9401
+
+Epoch 00036: val_acc did not improve from 0.94045
+Epoch 37/200
+3971/3970 [==============================] - 1277s 322ms/step - loss: 0.2572 - acc: 0.9611 - val_loss: 0.4014 - val_acc: 0.9372
+
+Epoch 00037: val_acc did not improve from 0.94045
+Epoch 38/200
+3971/3970 [==============================] - 1280s 322ms/step - loss: 0.2563 - acc: 0.9611 - val_loss: 0.3904 - val_acc: 0.9380
+
+Epoch 00038: val_acc did not improve from 0.94045
+Epoch 39/200
+3971/3970 [==============================] - 1299s 327ms/step - loss: 0.2539 - acc: 0.9616 - val_loss: 0.4167 - val_acc: 0.9331
+
+Epoch 00039: val_acc did not improve from 0.94045
+Epoch 40/200
+3971/3970 [==============================] - 1290s 325ms/step - loss: 0.2532 - acc: 0.9617 - val_loss: 0.3909 - val_acc: 0.9391
+
+Epoch 00040: val_acc did not improve from 0.94045
+Epoch 41/200
+3971/3970 [==============================] - 1306s 329ms/step - loss: 0.2511 - acc: 0.9620 - val_loss: 0.3718 - val_acc: 0.9432
+
+Epoch 00041: val_acc improved from 0.94045 to 0.94325, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 42/200
+3971/3970 [==============================] - 1295s 326ms/step - loss: 0.2505 - acc: 0.9620 - val_loss: 0.4239 - val_acc: 0.9318
+
+Epoch 00042: val_acc did not improve from 0.94325
+Epoch 43/200
+3971/3970 [==============================] - 1292s 325ms/step - loss: 0.2495 - acc: 0.9620 - val_loss: 0.4019 - val_acc: 0.9350
+
+Epoch 00043: val_acc did not improve from 0.94325
+Epoch 44/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.2482 - acc: 0.9622 - val_loss: 0.3708 - val_acc: 0.9439
+
+Epoch 00044: val_acc improved from 0.94325 to 0.94389, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 45/200
+3971/3970 [==============================] - 1311s 330ms/step - loss: 0.2477 - acc: 0.9624 - val_loss: 0.4012 - val_acc: 0.9367
+
+Epoch 00045: val_acc did not improve from 0.94389
+Epoch 46/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.2461 - acc: 0.9626 - val_loss: 0.4123 - val_acc: 0.9340
+
+Epoch 00046: val_acc did not improve from 0.94389
+Epoch 47/200
+3971/3970 [==============================] - 1289s 325ms/step - loss: 0.2454 - acc: 0.9627 - val_loss: 0.4199 - val_acc: 0.9323
+
+Epoch 00047: val_acc did not improve from 0.94389
+Epoch 48/200
+3971/3970 [==============================] - 1307s 329ms/step - loss: 0.2439 - acc: 0.9627 - val_loss: 0.3960 - val_acc: 0.9374
+
+Epoch 00048: val_acc did not improve from 0.94389
+Epoch 49/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.2426 - acc: 0.9630 - val_loss: 0.4193 - val_acc: 0.9298
+
+Epoch 00049: val_acc did not improve from 0.94389
+Epoch 50/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.2424 - acc: 0.9631 - val_loss: 0.3823 - val_acc: 0.9415
+
+Epoch 00050: val_acc did not improve from 0.94389
+Epoch 51/200
+3971/3970 [==============================] - 1287s 324ms/step - loss: 0.2411 - acc: 0.9632 - val_loss: 0.3657 - val_acc: 0.9440
+
+Epoch 00051: val_acc improved from 0.94389 to 0.94403, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 52/200
+3971/3970 [==============================] - 1297s 327ms/step - loss: 0.2406 - acc: 0.9633 - val_loss: 0.3922 - val_acc: 0.9383
+
+Epoch 00052: val_acc did not improve from 0.94403
+Epoch 53/200
+3971/3970 [==============================] - 1297s 327ms/step - loss: 0.2395 - acc: 0.9633 - val_loss: 0.3703 - val_acc: 0.9436
+
+Epoch 00053: val_acc did not improve from 0.94403
+Epoch 54/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.2389 - acc: 0.9633 - val_loss: 0.3793 - val_acc: 0.9398
+
+Epoch 00054: val_acc did not improve from 0.94403
+Epoch 55/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.2375 - acc: 0.9635 - val_loss: 0.4061 - val_acc: 0.9339
+
+Epoch 00055: val_acc did not improve from 0.94403
+Epoch 56/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.2367 - acc: 0.9637 - val_loss: 0.3798 - val_acc: 0.9395
+
+Epoch 00056: val_acc did not improve from 0.94403
+Epoch 57/200
+3971/3970 [==============================] - 1309s 330ms/step - loss: 0.2354 - acc: 0.9638 - val_loss: 0.3850 - val_acc: 0.9394
+
+Epoch 00057: val_acc did not improve from 0.94403
+Epoch 58/200
+3971/3970 [==============================] - 1301s 328ms/step - loss: 0.2355 - acc: 0.9636 - val_loss: 0.3911 - val_acc: 0.9367
+
+Epoch 00058: val_acc did not improve from 0.94403
+Epoch 59/200
+3971/3970 [==============================] - 1295s 326ms/step - loss: 0.2338 - acc: 0.9640 - val_loss: 0.3891 - val_acc: 0.9376
+
+Epoch 00059: val_acc did not improve from 0.94403
+Epoch 60/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.2332 - acc: 0.9641 - val_loss: 0.3736 - val_acc: 0.9395
+
+Epoch 00060: val_acc did not improve from 0.94403
+Epoch 61/200
+3971/3970 [==============================] - 1311s 330ms/step - loss: 0.2321 - acc: 0.9643 - val_loss: 0.3969 - val_acc: 0.9357
+
+Epoch 00061: val_acc did not improve from 0.94403
+Epoch 62/200
+3971/3970 [==============================] - 1308s 329ms/step - loss: 0.2308 - acc: 0.9646 - val_loss: 0.3791 - val_acc: 0.9392
+
+Epoch 00062: val_acc did not improve from 0.94403
+Epoch 63/200
+3971/3970 [==============================] - 1303s 328ms/step - loss: 0.2310 - acc: 0.9645 - val_loss: 0.3904 - val_acc: 0.9355
+
+Epoch 00063: val_acc did not improve from 0.94403
+Epoch 64/200
+3971/3970 [==============================] - 1313s 331ms/step - loss: 0.2301 - acc: 0.9644 - val_loss: 0.3825 - val_acc: 0.9391
+
+Epoch 00064: val_acc did not improve from 0.94403
+Epoch 65/200
+3971/3970 [==============================] - 1294s 326ms/step - loss: 0.2290 - acc: 0.9647 - val_loss: 0.3798 - val_acc: 0.9393
+
+Epoch 00065: val_acc did not improve from 0.94403
+Epoch 66/200
+3971/3970 [==============================] - 1284s 323ms/step - loss: 0.2285 - acc: 0.9646 - val_loss: 0.3893 - val_acc: 0.9389
+
+Epoch 00066: val_acc did not improve from 0.94403
+Epoch 67/200
+3971/3970 [==============================] - 1290s 325ms/step - loss: 0.2280 - acc: 0.9648 - val_loss: 0.3613 - val_acc: 0.9453
+
+Epoch 00067: val_acc improved from 0.94403 to 0.94525, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 68/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.2273 - acc: 0.9649 - val_loss: 0.4093 - val_acc: 0.9333
+
+Epoch 00068: val_acc did not improve from 0.94525
+Epoch 69/200
+3971/3970 [==============================] - 1300s 327ms/step - loss: 0.2265 - acc: 0.9650 - val_loss: 0.3837 - val_acc: 0.9379
+
+Epoch 00069: val_acc did not improve from 0.94525
+Epoch 70/200
+3971/3970 [==============================] - 1307s 329ms/step - loss: 0.2264 - acc: 0.9647 - val_loss: 0.3559 - val_acc: 0.9454
+
+Epoch 00070: val_acc improved from 0.94525 to 0.94536, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 71/200
+3971/3970 [==============================] - 1287s 324ms/step - loss: 0.2255 - acc: 0.9651 - val_loss: 0.3792 - val_acc: 0.9413
+
+Epoch 00071: val_acc did not improve from 0.94536
+Epoch 72/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.2251 - acc: 0.9648 - val_loss: 0.3762 - val_acc: 0.9391
+
+Epoch 00072: val_acc did not improve from 0.94536
+Epoch 73/200
+3971/3970 [==============================] - 1289s 325ms/step - loss: 0.2236 - acc: 0.9652 - val_loss: 0.3971 - val_acc: 0.9362
+
+Epoch 00073: val_acc did not improve from 0.94536
+Epoch 74/200
+3971/3970 [==============================] - 1308s 329ms/step - loss: 0.2234 - acc: 0.9653 - val_loss: 0.3820 - val_acc: 0.9399
+
+Epoch 00074: val_acc did not improve from 0.94536
+Epoch 75/200
+3971/3970 [==============================] - 1312s 330ms/step - loss: 0.2228 - acc: 0.9653 - val_loss: 0.3790 - val_acc: 0.9396
+
+Epoch 00075: val_acc did not improve from 0.94536
+Epoch 76/200
+3971/3970 [==============================] - 1304s 328ms/step - loss: 0.2219 - acc: 0.9653 - val_loss: 0.3488 - val_acc: 0.9454
+
+Epoch 00076: val_acc improved from 0.94536 to 0.94538, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 77/200
+3971/3970 [==============================] - 1313s 331ms/step - loss: 0.2209 - acc: 0.9656 - val_loss: 0.3556 - val_acc: 0.9437
+
+Epoch 00077: val_acc did not improve from 0.94538
+Epoch 78/200
+3971/3970 [==============================] - 1295s 326ms/step - loss: 0.2209 - acc: 0.9655 - val_loss: 0.3691 - val_acc: 0.9426
+
+Epoch 00078: val_acc did not improve from 0.94538
+Epoch 79/200
+3971/3970 [==============================] - 1302s 328ms/step - loss: 0.2199 - acc: 0.9655 - val_loss: 0.3726 - val_acc: 0.9414
+
+Epoch 00079: val_acc did not improve from 0.94538
+Epoch 80/200
+3971/3970 [==============================] - 1299s 327ms/step - loss: 0.2192 - acc: 0.9656 - val_loss: 0.3714 - val_acc: 0.9417
+
+Epoch 00080: val_acc did not improve from 0.94538
+Epoch 81/200
+3971/3970 [==============================] - 1312s 330ms/step - loss: 0.2195 - acc: 0.9655 - val_loss: 0.3848 - val_acc: 0.9364
+
+Epoch 00081: val_acc did not improve from 0.94538
+Epoch 82/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.1706 - acc: 0.9777 - val_loss: 0.2830 - val_acc: 0.9610
+
+Epoch 00082: val_acc improved from 0.94538 to 0.96103, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 83/200
+3971/3970 [==============================] - 1312s 330ms/step - loss: 0.1508 - acc: 0.9801 - val_loss: 0.2703 - val_acc: 0.9625
+
+Epoch 00083: val_acc improved from 0.96103 to 0.96247, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 84/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.1399 - acc: 0.9812 - val_loss: 0.2639 - val_acc: 0.9626
+
+Epoch 00084: val_acc improved from 0.96247 to 0.96261, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 85/200
+3971/3970 [==============================] - 1316s 331ms/step - loss: 0.1320 - acc: 0.9816 - val_loss: 0.2559 - val_acc: 0.9631
+
+Epoch 00085: val_acc improved from 0.96261 to 0.96313, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 86/200
+3971/3970 [==============================] - 1284s 323ms/step - loss: 0.1265 - acc: 0.9818 - val_loss: 0.2544 - val_acc: 0.9628
+
+Epoch 00086: val_acc did not improve from 0.96313
+Epoch 87/200
+3971/3970 [==============================] - 1299s 327ms/step - loss: 0.1217 - acc: 0.9819 - val_loss: 0.2481 - val_acc: 0.9629
+
+Epoch 00087: val_acc did not improve from 0.96313
+Epoch 88/200
+3971/3970 [==============================] - 1293s 326ms/step - loss: 0.1179 - acc: 0.9821 - val_loss: 0.2459 - val_acc: 0.9629
+
+Epoch 00088: val_acc did not improve from 0.96313
+Epoch 89/200
+3971/3970 [==============================] - 1290s 325ms/step - loss: 0.1151 - acc: 0.9823 - val_loss: 0.2446 - val_acc: 0.9618
+
+Epoch 00089: val_acc did not improve from 0.96313
+Epoch 90/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.1114 - acc: 0.9825 - val_loss: 0.2413 - val_acc: 0.9626
+
+Epoch 00090: val_acc did not improve from 0.96313
+Epoch 91/200
+3971/3970 [==============================] - 1319s 332ms/step - loss: 0.1084 - acc: 0.9826 - val_loss: 0.2392 - val_acc: 0.9629
+
+Epoch 00091: val_acc did not improve from 0.96313
+Epoch 92/200
+3971/3970 [==============================] - 1297s 327ms/step - loss: 0.1070 - acc: 0.9826 - val_loss: 0.2364 - val_acc: 0.9634
+
+Epoch 00092: val_acc improved from 0.96313 to 0.96341, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 93/200
+3971/3970 [==============================] - 1277s 321ms/step - loss: 0.1052 - acc: 0.9826 - val_loss: 0.2368 - val_acc: 0.9629
+
+Epoch 00093: val_acc did not improve from 0.96341
+Epoch 94/200
+3971/3970 [==============================] - 1295s 326ms/step - loss: 0.1029 - acc: 0.9830 - val_loss: 0.2363 - val_acc: 0.9624
+
+Epoch 00094: val_acc did not improve from 0.96341
+Epoch 95/200
+3971/3970 [==============================] - 1289s 325ms/step - loss: 0.1015 - acc: 0.9829 - val_loss: 0.2335 - val_acc: 0.9630
+
+Epoch 00095: val_acc did not improve from 0.96341
+Epoch 96/200
+3971/3970 [==============================] - 1292s 325ms/step - loss: 0.1007 - acc: 0.9828 - val_loss: 0.2355 - val_acc: 0.9620
+
+Epoch 00096: val_acc did not improve from 0.96341
+Epoch 97/200
+3971/3970 [==============================] - 1311s 330ms/step - loss: 0.0993 - acc: 0.9829 - val_loss: 0.2313 - val_acc: 0.9631
+
+Epoch 00097: val_acc did not improve from 0.96341
+Epoch 98/200
+3971/3970 [==============================] - 1307s 329ms/step - loss: 0.0983 - acc: 0.9829 - val_loss: 0.2368 - val_acc: 0.9620
+
+Epoch 00098: val_acc did not improve from 0.96341
+Epoch 99/200
+3971/3970 [==============================] - 1323s 333ms/step - loss: 0.0973 - acc: 0.9830 - val_loss: 0.2310 - val_acc: 0.9632
+
+Epoch 00099: val_acc did not improve from 0.96341
+Epoch 100/200
+3971/3970 [==============================] - 1325s 334ms/step - loss: 0.0966 - acc: 0.9829 - val_loss: 0.2303 - val_acc: 0.9623
+
+Epoch 00100: val_acc did not improve from 0.96341
+Epoch 101/200
+3971/3970 [==============================] - 1318s 332ms/step - loss: 0.0955 - acc: 0.9831 - val_loss: 0.2301 - val_acc: 0.9631
+
+Epoch 00101: val_acc did not improve from 0.96341
+Epoch 102/200
+3971/3970 [==============================] - 1319s 332ms/step - loss: 0.0948 - acc: 0.9832 - val_loss: 0.2291 - val_acc: 0.9626
+
+Epoch 00102: val_acc did not improve from 0.96341
+Epoch 103/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.0939 - acc: 0.9831 - val_loss: 0.2299 - val_acc: 0.9624
+
+Epoch 00103: val_acc did not improve from 0.96341
+Epoch 104/200
+3971/3970 [==============================] - 1311s 330ms/step - loss: 0.0927 - acc: 0.9833 - val_loss: 0.2267 - val_acc: 0.9625
+
+Epoch 00104: val_acc did not improve from 0.96341
+Epoch 105/200
+3971/3970 [==============================] - 1304s 328ms/step - loss: 0.0926 - acc: 0.9832 - val_loss: 0.2258 - val_acc: 0.9628
+
+Epoch 00105: val_acc did not improve from 0.96341
+Epoch 106/200
+3971/3970 [==============================] - 1324s 333ms/step - loss: 0.0919 - acc: 0.9832 - val_loss: 0.2256 - val_acc: 0.9634
+
+Epoch 00106: val_acc did not improve from 0.96341
+Epoch 107/200
+3971/3970 [==============================] - 1304s 328ms/step - loss: 0.0914 - acc: 0.9833 - val_loss: 0.2319 - val_acc: 0.9611
+
+Epoch 00107: val_acc did not improve from 0.96341
+Epoch 108/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.0913 - acc: 0.9832 - val_loss: 0.2284 - val_acc: 0.9621
+
+Epoch 00108: val_acc did not improve from 0.96341
+Epoch 109/200
+3971/3970 [==============================] - 1317s 332ms/step - loss: 0.0909 - acc: 0.9832 - val_loss: 0.2276 - val_acc: 0.9626
+
+Epoch 00109: val_acc did not improve from 0.96341
+Epoch 110/200
+3971/3970 [==============================] - 1293s 326ms/step - loss: 0.0900 - acc: 0.9834 - val_loss: 0.2274 - val_acc: 0.9620
+
+Epoch 00110: val_acc did not improve from 0.96341
+Epoch 111/200
+3971/3970 [==============================] - 1302s 328ms/step - loss: 0.0898 - acc: 0.9835 - val_loss: 0.2237 - val_acc: 0.9625
+
+Epoch 00111: val_acc did not improve from 0.96341
+Epoch 112/200
+3971/3970 [==============================] - 1294s 326ms/step - loss: 0.0896 - acc: 0.9833 - val_loss: 0.2291 - val_acc: 0.9615
+
+Epoch 00112: val_acc did not improve from 0.96341
+Epoch 113/200
+3971/3970 [==============================] - 1297s 327ms/step - loss: 0.0891 - acc: 0.9834 - val_loss: 0.2253 - val_acc: 0.9625
+
+Epoch 00113: val_acc did not improve from 0.96341
+Epoch 114/200
+3971/3970 [==============================] - 1328s 334ms/step - loss: 0.0883 - acc: 0.9835 - val_loss: 0.2282 - val_acc: 0.9621
+
+Epoch 00114: val_acc did not improve from 0.96341
+Epoch 115/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.0884 - acc: 0.9835 - val_loss: 0.2266 - val_acc: 0.9618
+
+Epoch 00115: val_acc did not improve from 0.96341
+Epoch 116/200
+3971/3970 [==============================] - 1312s 330ms/step - loss: 0.0880 - acc: 0.9834 - val_loss: 0.2240 - val_acc: 0.9623
+
+Epoch 00116: val_acc did not improve from 0.96341
+Epoch 117/200
+3971/3970 [==============================] - 1314s 331ms/step - loss: 0.0881 - acc: 0.9833 - val_loss: 0.2234 - val_acc: 0.9629
+
+Epoch 00117: val_acc did not improve from 0.96341
+Epoch 118/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.0875 - acc: 0.9834 - val_loss: 0.2254 - val_acc: 0.9620
+
+Epoch 00118: val_acc did not improve from 0.96341
+Epoch 119/200
+3971/3970 [==============================] - 1323s 333ms/step - loss: 0.0873 - acc: 0.9835 - val_loss: 0.2230 - val_acc: 0.9631
+
+Epoch 00119: val_acc did not improve from 0.96341
+Epoch 120/200
+3971/3970 [==============================] - 1287s 324ms/step - loss: 0.0868 - acc: 0.9836 - val_loss: 0.2265 - val_acc: 0.9618
+
+Epoch 00120: val_acc did not improve from 0.96341
+Epoch 121/200
+3971/3970 [==============================] - 1323s 333ms/step - loss: 0.0864 - acc: 0.9837 - val_loss: 0.2272 - val_acc: 0.9616
+
+Epoch 00121: val_acc did not improve from 0.96341
+Epoch 122/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.0798 - acc: 0.9856 - val_loss: 0.2139 - val_acc: 0.9654
+
+Epoch 00122: val_acc improved from 0.96341 to 0.96537, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 123/200
+3971/3970 [==============================] - 1288s 324ms/step - loss: 0.0772 - acc: 0.9864 - val_loss: 0.2122 - val_acc: 0.9655
+
+Epoch 00123: val_acc improved from 0.96537 to 0.96553, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 124/200
+3971/3970 [==============================] - 1313s 331ms/step - loss: 0.0757 - acc: 0.9866 - val_loss: 0.2127 - val_acc: 0.9651
+
+Epoch 00124: val_acc did not improve from 0.96553
+Epoch 125/200
+3971/3970 [==============================] - 1325s 334ms/step - loss: 0.0750 - acc: 0.9869 - val_loss: 0.2108 - val_acc: 0.9660
+
+Epoch 00125: val_acc improved from 0.96553 to 0.96599, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 126/200
+3971/3970 [==============================] - 1279s 322ms/step - loss: 0.0743 - acc: 0.9870 - val_loss: 0.2104 - val_acc: 0.9659
+
+Epoch 00126: val_acc did not improve from 0.96599
+Epoch 127/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.0740 - acc: 0.9870 - val_loss: 0.2109 - val_acc: 0.9658
+
+Epoch 00127: val_acc did not improve from 0.96599
+Epoch 128/200
+3971/3970 [==============================] - 1313s 331ms/step - loss: 0.0733 - acc: 0.9873 - val_loss: 0.2103 - val_acc: 0.9662
+
+Epoch 00128: val_acc improved from 0.96599 to 0.96620, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 129/200
+3971/3970 [==============================] - 1297s 327ms/step - loss: 0.0731 - acc: 0.9873 - val_loss: 0.2118 - val_acc: 0.9655
+
+Epoch 00129: val_acc did not improve from 0.96620
+Epoch 130/200
+3971/3970 [==============================] - 1312s 330ms/step - loss: 0.0728 - acc: 0.9873 - val_loss: 0.2098 - val_acc: 0.9661
+
+Epoch 00130: val_acc did not improve from 0.96620
+Epoch 131/200
+3971/3970 [==============================] - 1298s 327ms/step - loss: 0.0722 - acc: 0.9874 - val_loss: 0.2096 - val_acc: 0.9662
+
+Epoch 00131: val_acc improved from 0.96620 to 0.96624, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 132/200
+3971/3970 [==============================] - 1293s 326ms/step - loss: 0.0724 - acc: 0.9874 - val_loss: 0.2093 - val_acc: 0.9664
+
+Epoch 00132: val_acc improved from 0.96624 to 0.96640, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 133/200
+3971/3970 [==============================] - 1326s 334ms/step - loss: 0.0718 - acc: 0.9875 - val_loss: 0.2100 - val_acc: 0.9661
+
+Epoch 00133: val_acc did not improve from 0.96640
+Epoch 134/200
+3971/3970 [==============================] - 1312s 330ms/step - loss: 0.0713 - acc: 0.9876 - val_loss: 0.2094 - val_acc: 0.9662
+
+Epoch 00134: val_acc did not improve from 0.96640
+Epoch 135/200
+3971/3970 [==============================] - 1328s 335ms/step - loss: 0.0713 - acc: 0.9876 - val_loss: 0.2089 - val_acc: 0.9662
+
+Epoch 00135: val_acc did not improve from 0.96640
+Epoch 136/200
+3971/3970 [==============================] - 1296s 326ms/step - loss: 0.0706 - acc: 0.9877 - val_loss: 0.2094 - val_acc: 0.9660
+
+Epoch 00136: val_acc did not improve from 0.96640
+Epoch 137/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.0704 - acc: 0.9878 - val_loss: 0.2089 - val_acc: 0.9662
+
+Epoch 00137: val_acc did not improve from 0.96640
+Epoch 138/200
+3971/3970 [==============================] - 1309s 330ms/step - loss: 0.0704 - acc: 0.9876 - val_loss: 0.2093 - val_acc: 0.9660
+
+Epoch 00138: val_acc did not improve from 0.96640
+Epoch 139/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.0701 - acc: 0.9878 - val_loss: 0.2091 - val_acc: 0.9662
+
+Epoch 00139: val_acc did not improve from 0.96640
+Epoch 140/200
+3971/3970 [==============================] - 1295s 326ms/step - loss: 0.0700 - acc: 0.9877 - val_loss: 0.2090 - val_acc: 0.9661
+
+Epoch 00140: val_acc did not improve from 0.96640
+Epoch 141/200
+3971/3970 [==============================] - 1330s 335ms/step - loss: 0.0695 - acc: 0.9878 - val_loss: 0.2086 - val_acc: 0.9664
+
+Epoch 00141: val_acc improved from 0.96640 to 0.96642, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 142/200
+3971/3970 [==============================] - 1318s 332ms/step - loss: 0.0694 - acc: 0.9878 - val_loss: 0.2078 - val_acc: 0.9664
+
+Epoch 00142: val_acc did not improve from 0.96642
+Epoch 143/200
+3971/3970 [==============================] - 1314s 331ms/step - loss: 0.0697 - acc: 0.9878 - val_loss: 0.2084 - val_acc: 0.9662
+
+Epoch 00143: val_acc did not improve from 0.96642
+Epoch 144/200
+3971/3970 [==============================] - 1297s 327ms/step - loss: 0.0690 - acc: 0.9879 - val_loss: 0.2092 - val_acc: 0.9659
+
+Epoch 00144: val_acc did not improve from 0.96642
+Epoch 145/200
+3971/3970 [==============================] - 1321s 333ms/step - loss: 0.0689 - acc: 0.9879 - val_loss: 0.2091 - val_acc: 0.9660
+
+Epoch 00145: val_acc did not improve from 0.96642
+Epoch 146/200
+3971/3970 [==============================] - 1302s 328ms/step - loss: 0.0686 - acc: 0.9880 - val_loss: 0.2088 - val_acc: 0.9660
+
+Epoch 00146: val_acc did not improve from 0.96642
+Epoch 147/200
+3971/3970 [==============================] - 1301s 328ms/step - loss: 0.0681 - acc: 0.9881 - val_loss: 0.2080 - val_acc: 0.9662
+
+Epoch 00147: val_acc did not improve from 0.96642
+Epoch 148/200
+3971/3970 [==============================] - 1301s 328ms/step - loss: 0.0685 - acc: 0.9879 - val_loss: 0.2085 - val_acc: 0.9662
+
+Epoch 00148: val_acc did not improve from 0.96642
+Epoch 149/200
+3971/3970 [==============================] - 1314s 331ms/step - loss: 0.0682 - acc: 0.9881 - val_loss: 0.2075 - val_acc: 0.9662
+
+Epoch 00149: val_acc did not improve from 0.96642
+Epoch 150/200
+3971/3970 [==============================] - 1317s 332ms/step - loss: 0.0680 - acc: 0.9880 - val_loss: 0.2082 - val_acc: 0.9661
+
+Epoch 00150: val_acc did not improve from 0.96642
+Epoch 151/200
+3971/3970 [==============================] - 1330s 335ms/step - loss: 0.0677 - acc: 0.9880 - val_loss: 0.2077 - val_acc: 0.9665
+
+Epoch 00151: val_acc improved from 0.96642 to 0.96655, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 152/200
+3971/3970 [==============================] - 1303s 328ms/step - loss: 0.0679 - acc: 0.9880 - val_loss: 0.2084 - val_acc: 0.9660
+
+Epoch 00152: val_acc did not improve from 0.96655
+Epoch 153/200
+3971/3970 [==============================] - 1301s 328ms/step - loss: 0.0677 - acc: 0.9880 - val_loss: 0.2069 - val_acc: 0.9666
+
+Epoch 00153: val_acc improved from 0.96655 to 0.96660, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 154/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.0675 - acc: 0.9880 - val_loss: 0.2079 - val_acc: 0.9663
+
+Epoch 00154: val_acc did not improve from 0.96660
+Epoch 155/200
+3971/3970 [==============================] - 1309s 330ms/step - loss: 0.0672 - acc: 0.9881 - val_loss: 0.2074 - val_acc: 0.9663
+
+Epoch 00155: val_acc did not improve from 0.96660
+Epoch 156/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.0672 - acc: 0.9882 - val_loss: 0.2071 - val_acc: 0.9663
+
+Epoch 00156: val_acc did not improve from 0.96660
+Epoch 157/200
+3971/3970 [==============================] - 1337s 337ms/step - loss: 0.0671 - acc: 0.9881 - val_loss: 0.2074 - val_acc: 0.9663
+
+Epoch 00157: val_acc did not improve from 0.96660
+Epoch 158/200
+3971/3970 [==============================] - 1309s 330ms/step - loss: 0.0668 - acc: 0.9882 - val_loss: 0.2075 - val_acc: 0.9662
+
+Epoch 00158: val_acc did not improve from 0.96660
+Epoch 159/200
+3971/3970 [==============================] - 1318s 332ms/step - loss: 0.0666 - acc: 0.9882 - val_loss: 0.2074 - val_acc: 0.9666
+
+Epoch 00159: val_acc did not improve from 0.96660
+Epoch 160/200
+3971/3970 [==============================] - 1308s 329ms/step - loss: 0.0663 - acc: 0.9882 - val_loss: 0.2073 - val_acc: 0.9664
+
+Epoch 00160: val_acc did not improve from 0.96660
+Epoch 161/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.0667 - acc: 0.9880 - val_loss: 0.2077 - val_acc: 0.9660
+
+Epoch 00161: val_acc did not improve from 0.96660
+Epoch 162/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.0652 - acc: 0.9886 - val_loss: 0.2065 - val_acc: 0.9664
+
+Epoch 00162: val_acc did not improve from 0.96660
+Epoch 163/200
+3971/3970 [==============================] - 1324s 334ms/step - loss: 0.0655 - acc: 0.9885 - val_loss: 0.2065 - val_acc: 0.9664
+
+Epoch 00163: val_acc did not improve from 0.96660
+Epoch 164/200
+3971/3970 [==============================] - 1290s 325ms/step - loss: 0.0653 - acc: 0.9885 - val_loss: 0.2059 - val_acc: 0.9665
+
+Epoch 00164: val_acc did not improve from 0.96660
+Epoch 165/200
+3971/3970 [==============================] - 1323s 333ms/step - loss: 0.0655 - acc: 0.9884 - val_loss: 0.2061 - val_acc: 0.9665
+
+Epoch 00165: val_acc did not improve from 0.96660
+Epoch 166/200
+3971/3970 [==============================] - 1317s 332ms/step - loss: 0.0651 - acc: 0.9886 - val_loss: 0.2060 - val_acc: 0.9665
+
+Epoch 00166: val_acc did not improve from 0.96660
+Epoch 167/200
+3971/3970 [==============================] - 1305s 329ms/step - loss: 0.0652 - acc: 0.9885 - val_loss: 0.2061 - val_acc: 0.9664
+
+Epoch 00167: val_acc did not improve from 0.96660
+Epoch 168/200
+3971/3970 [==============================] - 1301s 328ms/step - loss: 0.0648 - acc: 0.9887 - val_loss: 0.2059 - val_acc: 0.9664
+
+Epoch 00168: val_acc did not improve from 0.96660
+Epoch 169/200
+3971/3970 [==============================] - 1315s 331ms/step - loss: 0.0648 - acc: 0.9885 - val_loss: 0.2059 - val_acc: 0.9664
+
+Epoch 00169: val_acc did not improve from 0.96660
+Epoch 170/200
+3971/3970 [==============================] - 1316s 331ms/step - loss: 0.0645 - acc: 0.9887 - val_loss: 0.2058 - val_acc: 0.9666
+
+Epoch 00170: val_acc did not improve from 0.96660
+Epoch 171/200
+3971/3970 [==============================] - 1313s 331ms/step - loss: 0.0647 - acc: 0.9887 - val_loss: 0.2059 - val_acc: 0.9666
+
+Epoch 00171: val_acc did not improve from 0.96660
+Epoch 172/200
+3971/3970 [==============================] - 1299s 327ms/step - loss: 0.0646 - acc: 0.9886 - val_loss: 0.2059 - val_acc: 0.9665
+
+Epoch 00172: val_acc did not improve from 0.96660
+Epoch 173/200
+3971/3970 [==============================] - 1311s 330ms/step - loss: 0.0647 - acc: 0.9887 - val_loss: 0.2058 - val_acc: 0.9666
+
+Epoch 00173: val_acc did not improve from 0.96660
+Epoch 174/200
+3971/3970 [==============================] - 1318s 332ms/step - loss: 0.0648 - acc: 0.9886 - val_loss: 0.2059 - val_acc: 0.9665
+
+Epoch 00174: val_acc did not improve from 0.96660
+Epoch 175/200
+3971/3970 [==============================] - 1317s 332ms/step - loss: 0.0647 - acc: 0.9887 - val_loss: 0.2057 - val_acc: 0.9666
+
+Epoch 00175: val_acc improved from 0.96660 to 0.96663, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 176/200
+3971/3970 [==============================] - 1308s 329ms/step - loss: 0.0645 - acc: 0.9887 - val_loss: 0.2057 - val_acc: 0.9667
+
+Epoch 00176: val_acc improved from 0.96663 to 0.96673, saving model to .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Epoch 177/200
+3971/3970 [==============================] - 1291s 325ms/step - loss: 0.0646 - acc: 0.9886 - val_loss: 0.2059 - val_acc: 0.9666
+
+Epoch 00177: val_acc did not improve from 0.96673
+Epoch 178/200
+3971/3970 [==============================] - 1311s 330ms/step - loss: 0.0647 - acc: 0.9886 - val_loss: 0.2058 - val_acc: 0.9666
+
+Epoch 00178: val_acc did not improve from 0.96673
+Epoch 179/200
+3971/3970 [==============================] - 1332s 335ms/step - loss: 0.0645 - acc: 0.9887 - val_loss: 0.2055 - val_acc: 0.9667
+
+Epoch 00179: val_acc did not improve from 0.96673
+Epoch 180/200
+3971/3970 [==============================] - 1300s 327ms/step - loss: 0.0646 - acc: 0.9885 - val_loss: 0.2055 - val_acc: 0.9667
+
+Epoch 00180: val_acc did not improve from 0.96673
+Epoch 181/200
+3971/3970 [==============================] - 1297s 327ms/step - loss: 0.0647 - acc: 0.9886 - val_loss: 0.2057 - val_acc: 0.9666
+
+Epoch 00181: val_acc did not improve from 0.96673
+Epoch 182/200
+3971/3970 [==============================] - 1323s 333ms/step - loss: 0.0645 - acc: 0.9888 - val_loss: 0.2056 - val_acc: 0.9666
+
+Epoch 00182: val_acc did not improve from 0.96673
+Epoch 183/200
+3971/3970 [==============================] - 1324s 333ms/step - loss: 0.0649 - acc: 0.9885 - val_loss: 0.2055 - val_acc: 0.9666
+
+Epoch 00183: val_acc did not improve from 0.96673
+Epoch 184/200
+3971/3970 [==============================] - 1331s 335ms/step - loss: 0.0646 - acc: 0.9886 - val_loss: 0.2055 - val_acc: 0.9666
+
+Epoch 00184: val_acc did not improve from 0.96673
+Epoch 185/200
+3971/3970 [==============================] - 1318s 332ms/step - loss: 0.0644 - acc: 0.9887 - val_loss: 0.2056 - val_acc: 0.9666
+
+Epoch 00185: val_acc did not improve from 0.96673
+Epoch 186/200
+3971/3970 [==============================] - 1294s 326ms/step - loss: 0.0646 - acc: 0.9887 - val_loss: 0.2057 - val_acc: 0.9665
+
+Epoch 00186: val_acc did not improve from 0.96673
+Epoch 187/200
+3971/3970 [==============================] - 1330s 335ms/step - loss: 0.0642 - acc: 0.9888 - val_loss: 0.2056 - val_acc: 0.9666
+
+Epoch 00187: val_acc did not improve from 0.96673
+Epoch 188/200
+3971/3970 [==============================] - 1329s 335ms/step - loss: 0.0645 - acc: 0.9887 - val_loss: 0.2057 - val_acc: 0.9666
+
+Epoch 00188: val_acc did not improve from 0.96673
+Epoch 189/200
+3971/3970 [==============================] - 1323s 333ms/step - loss: 0.0648 - acc: 0.9886 - val_loss: 0.2056 - val_acc: 0.9666
+
+Epoch 00189: val_acc did not improve from 0.96673
+Epoch 190/200
+3971/3970 [==============================] - 1323s 333ms/step - loss: 0.0643 - acc: 0.9888 - val_loss: 0.2057 - val_acc: 0.9665
+
+Epoch 00190: val_acc did not improve from 0.96673
+Epoch 191/200
+3971/3970 [==============================] - 1316s 331ms/step - loss: 0.0643 - acc: 0.9887 - val_loss: 0.2057 - val_acc: 0.9665
+
+Epoch 00191: val_acc did not improve from 0.96673
+Epoch 192/200
+3971/3970 [==============================] - 1319s 332ms/step - loss: 0.0643 - acc: 0.9886 - val_loss: 0.2056 - val_acc: 0.9666
+
+Epoch 00192: val_acc did not improve from 0.96673
+Epoch 193/200
+3971/3970 [==============================] - 1329s 335ms/step - loss: 0.0643 - acc: 0.9887 - val_loss: 0.2056 - val_acc: 0.9666
+
+Epoch 00193: val_acc did not improve from 0.96673
+Epoch 194/200
+3971/3970 [==============================] - 1304s 328ms/step - loss: 0.0643 - acc: 0.9887 - val_loss: 0.2055 - val_acc: 0.9667
+
+Epoch 00194: val_acc did not improve from 0.96673
+Epoch 195/200
+3971/3970 [==============================] - 1325s 334ms/step - loss: 0.0644 - acc: 0.9886 - val_loss: 0.2054 - val_acc: 0.9666
+
+Epoch 00195: val_acc did not improve from 0.96673
+Epoch 196/200
+3971/3970 [==============================] - 1299s 327ms/step - loss: 0.0644 - acc: 0.9886 - val_loss: 0.2053 - val_acc: 0.9665
+
+Epoch 00196: val_acc did not improve from 0.96673
+Epoch 197/200
+3971/3970 [==============================] - 1324s 333ms/step - loss: 0.0643 - acc: 0.9887 - val_loss: 0.2054 - val_acc: 0.9666
+
+Epoch 00197: val_acc did not improve from 0.96673
+Epoch 198/200
+3971/3970 [==============================] - 1326s 334ms/step - loss: 0.0641 - acc: 0.9887 - val_loss: 0.2055 - val_acc: 0.9666
+
+Epoch 00198: val_acc did not improve from 0.96673
+Epoch 199/200
+3971/3970 [==============================] - 1306s 329ms/step - loss: 0.0641 - acc: 0.9889 - val_loss: 0.2057 - val_acc: 0.9666
+
+Epoch 00199: val_acc did not improve from 0.96673
+Epoch 200/200
+3971/3970 [==============================] - 1336s 337ms/step - loss: 0.0644 - acc: 0.9886 - val_loss: 0.2055 - val_acc: 0.9666
+
+Epoch 00200: val_acc did not improve from 0.96673
+Saved trained model at .\result_recog\test191009_pseudo_ver10\my_resnet\trained_model.h5
+Traceback (most recent call last):
+  File "C:\Users\stnu2\Documents\Kaggle\kuzushiji-recognition\kuzushiji_project2\kuzushiji_project2\src\kuzushiji_project2.py", line 109, in <module>
+    pipe_line.ResNetPipeline_191009PseudoVer10().run_train()
+  File "C:\Users\stnu2\Documents\Kaggle\kuzushiji-recognition\kuzushiji_project2\kuzushiji_project2\src\pipe_line.py", line 9195, in run_train
+    pred_tr_letter_nos = self.predict(tr_inputs[0])
+  File "C:\Users\stnu2\Documents\Kaggle\kuzushiji-recognition\kuzushiji_project2\kuzushiji_project2\src\pipe_line.py", line 9208, in predict
+    inputs = self.__conv_data_to_input(raw_images)
+  File "C:\Users\stnu2\Documents\Kaggle\kuzushiji-recognition\kuzushiji_project2\kuzushiji_project2\src\pipe_line.py", line 8897, in __conv_data_to_input
+    conv_img, log_aspect = conv_func_one_sample(img)
+  File "C:\Users\stnu2\Documents\Kaggle\kuzushiji-recognition\kuzushiji_project2\kuzushiji_project2\src\pipe_line.py", line 8868, in conv_func_one_sample
+    to_uint8=True)
+  File "C:\Users\stnu2\Documents\Kaggle\kuzushiji-recognition\kuzushiji_project2\kuzushiji_project2\src\image_processing\image_proc.py", line 156, in gamma_correction
+    cor_images = max_strg * np.minimum(1.0, (images / max_strg) * (1.0 / gamma))
+MemoryError
+続行するには何かキーを押してください . . .
